@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#09072d">
+<title>NaRye Song Generator</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <div>
+      <div class="eyebrow">NaRye Studios</div>
+      <h1>Song Generator</h1>
+      <p class="sub">Prompt it. Shape it. Hear it.</p>
+    </div>
+    <button id="infoBtn" class="icon-btn" aria-label="About">i</button>
+  </header>
+
+  <nav class="top-tabs">
+    <button class="tab active" data-mode="smart">Smart Prompt</button>
+    <button class="tab" data-mode="quick">Quick Create</button>
+  </nav>
+
+  <main>
+    <section class="hero-card">
+      <div class="hero-title">Create a song from your imagination.</div>
+      <div class="hero-copy">Paste a full production brief, write a simple idea, or combine lyrics and style. NaRye interprets the details before sending the music request.</div>
+    </section>
+
+    <section class="panel">
+      <label class="label">Song prompt</label>
+      <textarea id="prompt" maxlength="12000" placeholder="Example: Dark, luxurious alternative R&B at 64 BPM in C minor. Female breathy mezzo-soprano with a soft contralto edge..."></textarea>
+      <div class="counter"><span id="promptCount">0</span>/12000</div>
+    </section>
+
+    <section class="panel">
+      <div class="label-row">
+        <label class="label">Lyrics <span class="optional">optional</span></label>
+        <button id="writeAi" class="small-btn">✦ Write with AI</button>
+      </div>
+      <textarea id="lyrics" maxlength="10000" placeholder="Paste your lyrics here, or leave blank if the prompt should generate the lyrics."></textarea>
+      <div class="counter"><span id="lyricsCount">0</span>/10000</div>
+    </section>
+
+    <section class="grid">
+      <div class="panel compact">
+        <label class="label">Singer voice</label>
+        <div class="chips" id="voiceChips">
+          <button class="chip active" data-value="Female">Female</button>
+          <button class="chip" data-value="Male">Male</button>
+        </div>
+      </div>
+      <div class="panel compact">
+        <label class="label">Title <span class="optional">optional</span></label>
+        <input id="title" maxlength="80" placeholder="Add your title">
+      </div>
+    </section>
+
+    <section class="panel">
+      <label class="label">Styles <span class="optional">optional</span></label>
+      <input id="style" maxlength="1000" placeholder="R&B, soul, alternative R&B, luxury soul, nocturnal...">
+      <div class="chips scroll">
+        <button class="chip style-chip">R&B</button>
+        <button class="chip style-chip">Soul</button>
+        <button class="chip style-chip">Alternative R&B</button>
+        <button class="chip style-chip">Neo-Soul</button>
+        <button class="chip style-chip">Jazz Soul</button>
+        <button class="chip style-chip">Afro-Soul</button>
+        <button class="chip style-chip">Brazilian Soul</button>
+        <button class="chip style-chip">Gospel Soul</button>
+      </div>
+    </section>
+
+    <section class="panel advanced">
+      <button id="advancedToggle" class="advanced-head">
+        <span>Advanced controls</span><span>＋</span>
+      </button>
+      <div id="advancedBody" class="advanced-body hidden">
+        <div class="field">
+          <label class="label">Tempo</label>
+          <input id="tempo" placeholder="e.g. 64 BPM">
+        </div>
+        <div class="field">
+          <label class="label">Key</label>
+          <input id="key" placeholder="e.g. C minor">
+        </div>
+        <div class="field">
+          <label class="label">Mood / atmosphere</label>
+          <input id="mood" placeholder="e.g. dark, lush, sensual, nocturnal">
+        </div>
+        <label class="toggle-row">
+          <input type="checkbox" id="instrumental">
+          <span>Instrumental only</span>
+        </label>
+      </div>
+    </section>
+
+    <button id="generateBtn" class="generate">
+      <span>✦</span> Generate Song
+    </button>
+
+    <section id="status" class="status hidden"></section>
+
+    <section id="result" class="result hidden">
+      <div class="result-head">
+        <div>
+          <div class="eyebrow">Generation complete</div>
+          <h2 id="resultTitle">Your Song</h2>
+        </div>
+        <button id="saveBtn" class="small-btn">Save</button>
+      </div>
+      <audio id="player" controls></audio>
+      <div class="result-actions">
+        <button id="downloadBtn" class="action">Download MP3</button>
+        <button id="newTakeBtn" class="action">Create New Take</button>
+      </div>
+      <details>
+        <summary>View interpreted Song DNA</summary>
+        <pre id="dna"></pre>
+      </details>
+    </section>
+
+    <section class="saved panel">
+      <div class="label">Saved songs</div>
+      <div id="savedList" class="saved-list"><div class="empty">Your saved generations will appear here.</div></div>
+    </section>
+  </main>
+
+  <footer>© NaRye Studios</footer>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>

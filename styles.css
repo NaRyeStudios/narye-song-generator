@@ -1,0 +1,27 @@
+*{box-sizing:border-box}
+:root{--bg:#08072b;--panel:#1d1d42;--panel2:#252548;--text:#fff;--muted:#aaa9c0;--accent:#a88cff;--pink:#f33cae;--coral:#ff8a83}
+html,body{margin:0;background:radial-gradient(circle at 50% -10%,#551176 0,#17104a 28%,var(--bg) 60%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100%}
+body{padding:0 0 40px}.app{max-width:760px;margin:auto;padding:34px 20px}
+header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:11px;color:#c6b6ff;font-weight:700}
+h1{font-size:40px;line-height:1;margin:7px 0}.sub{margin:8px 0;color:var(--muted)}
+.icon-btn{border:0;background:#2b2550;color:#fff;width:48px;height:48px;border-radius:50%;font-size:25px}
+.top-tabs{display:flex;gap:8px;background:#171638;padding:6px;border-radius:18px;margin-bottom:18px}
+.tab{flex:1;border:0;background:transparent;color:#8f8ca8;padding:13px;border-radius:14px;font-weight:700;font-size:15px}
+.tab.active{background:linear-gradient(100deg,#8e7be9,#d83bc0);color:#fff}
+.hero-card,.panel{background:rgba(29,29,66,.88);border:1px solid rgba(255,255,255,.06);border-radius:22px;padding:20px;margin:14px 0;box-shadow:0 14px 35px rgba(0,0,0,.14)}
+.hero-title{font-size:22px;font-weight:750}.hero-copy{color:#b7b5c9;line-height:1.5;margin-top:8px}
+.label{display:block;font-size:16px;font-weight:700;margin-bottom:10px}.optional{color:#85839d;font-weight:500;font-size:12px}
+textarea,input{width:100%;border:0;outline:0;background:#292946;color:#fff;border-radius:16px;padding:16px;font:inherit}
+textarea{min-height:190px;resize:vertical;line-height:1.5}input{height:52px}.counter{text-align:right;color:#7f7d98;font-size:11px;margin-top:7px}
+.label-row,.result-head,.advanced-head{display:flex;justify-content:space-between;align-items:center}.small-btn{border:1px solid transparent;border-radius:999px;padding:9px 14px;color:#fff;background:linear-gradient(#181738,#181738) padding-box,linear-gradient(90deg,var(--accent),var(--pink),var(--coral)) border-box;font-weight:700}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.compact{margin:0}.chips{display:flex;gap:8px;flex-wrap:wrap}.chips.scroll{overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px}
+.chip{border:0;background:#292946;color:#eee;padding:11px 15px;border-radius:999px;font-size:14px;white-space:nowrap}.chip.active{background:#7770d5;box-shadow:0 0 0 1px #b8a6ff inset}
+.generate{width:72%;margin:22px auto 10px;display:flex;justify-content:center;align-items:center;gap:10px;border:0;border-radius:999px;padding:18px 22px;background:linear-gradient(100deg,#a78cff,#df34ba,#ff8b83);color:#fff;font-size:19px;font-weight:800;cursor:pointer;box-shadow:0 15px 35px rgba(208,64,190,.25)}
+.generate:disabled{opacity:.55}.status{padding:15px 18px;border-radius:15px;background:#242443;color:#c9c6d9}.status.error{color:#ffb4b4}
+.advanced{padding:0;overflow:hidden}.advanced-head{width:100%;background:transparent;border:0;color:#fff;padding:19px;font-size:16px;font-weight:750}.advanced-body{padding:0 19px 19px}.hidden{display:none}.field{margin-top:13px}.toggle-row{display:flex;align-items:center;gap:10px;margin-top:15px;color:#d4d1df}.toggle-row input{width:auto;height:auto}
+.result audio{width:100%;margin:18px 0}.result h2{margin:5px 0;font-size:24px}.result-actions{display:flex;gap:10px}.action{flex:1;padding:12px;border:0;border-radius:12px;background:#292946;color:#fff;font-weight:700}
+details{margin-top:18px;color:#c5c2d4}pre{white-space:pre-wrap;background:#11112f;padding:14px;border-radius:12px;font-size:12px;line-height:1.5;overflow:auto}
+.saved-list{display:flex;flex-direction:column;gap:9px}.empty{color:#85839d}.saved-item{display:flex;align-items:center;justify-content:space-between;background:#292946;border-radius:14px;padding:12px}.saved-item button{border:0;background:none;color:#fff}
+footer{text-align:center;color:#66657e;font-size:11px;padding:25px 0}
+@media(max-width:600px){.app{padding:26px 16px}.grid{grid-template-columns:1fr}.generate{width:100%}h1{font-size:36px}.hero-card{padding:17px}}
